@@ -12,25 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import loginBackground from "/assets/loginBackground.png";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -44,7 +26,6 @@ export default function LogIn() {
       password: data.get("password"),
     });
   };
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -55,8 +36,7 @@ export default function LogIn() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage:
-              'url("https://mui.com//static/images/templates/templates-images/sign-in-side-bg.png")',
+            backgroundImage: `url(${loginBackground})`,
 
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -133,7 +113,6 @@ export default function LogIn() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
