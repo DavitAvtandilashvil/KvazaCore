@@ -28,7 +28,11 @@ export default function LogIn() {
   };
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100vh", position: "relative" }}
+      >
         <CssBaseline />
         <Grid
           item
@@ -46,6 +50,36 @@ export default function LogIn() {
             backgroundPosition: "left",
           }}
         />
+
+        <Grid
+          sx={{
+            pl: 4,
+            position: "absolute",
+            top: "40px",
+            width: "50%",
+            color: "#ffffffbd",
+            display: {
+              sm: "block",
+              xs: "none",
+            },
+            marginTop: "40px",
+          }}
+        >
+          <Typography variant="h4">
+            <b>ETWAVES</b>
+          </Typography>
+
+          <Typography variant="h5" sx={{ marginTop: "20px" }}>
+            A fascinating way to merge our physical and virtual realities using{" "}
+            <b>AR</b> and <b>VR </b> technologies, while <b>decentralizing</b>{" "}
+            our interaction through
+            <b> cryptography</b>! Connect to a decentralized network and
+            personally impact the rest of the world through your investment and
+            creation of portable non-fungible assets within a web3 ecosystem
+            built by Kwaza Games' volunteers, architects, and engineers, just
+            for you!
+          </Typography>
+        </Grid>
 
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
@@ -73,11 +107,21 @@ export default function LogIn() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
                 autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="hermesLink"
+                label="Hermes Link"
+                type="text"
+                id="hermesLink"
+                autoComplete="hermesLink"
               />
               <TextField
                 margin="normal"
